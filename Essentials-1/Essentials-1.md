@@ -44,14 +44,14 @@ A simple program that:
 2. writes text to the console;
 3. stops.
 
-´´´C
+```C
 #include <stdio.h>
 
 int main(void){
     puts("Its me")
     return 0;
 }
-´´´
+```
 
 An a mention to **algorithms** which are a structured and semi-formal description of steps a program should follow.
 
@@ -122,7 +122,7 @@ The other convention regarding numbers is that integers preceded by '0x' is trea
 
 For printing numbers, we use the `printf()` function from `stdio`. 'printf' is print with format, so is necessary to specify the type of the number we are printing.
 
-´´´C
+```C
 #include <stdio.h>
 
 int main(void){
@@ -133,7 +133,7 @@ int main(void){
 	printf("%f\n", 0.323);
     return 0;
 }
-´´´
+```
 
 ## Variables
 
@@ -185,6 +185,17 @@ And as we said before, a variable could be declared with a specific value, for e
 
 
 ## C keywords
+
+C keywords or **reserved keywords** are names used by the language itself. Because of this, these keywords are not available for redefinition, they can not be used as variable names, nor functions, nor any other named entity.
+
+A complete list is available in [cpp reference](https://en.cppreference.com/w/c/keyword).
+
+## Comments
+
+To make blocks of comments inside the code the comment must be surrounded by `/*` and `*/`. For example `/* This is a comment */`. Comments are treated as one space by the compiler, so they can be used to explain parts of the code inside the code itself.
+
+Another option is to use a one line comment, this line must start with `//` and the whole line will be treated as a space.
+
 
 
 # Basic data types, operations and flow control (decision statements)
