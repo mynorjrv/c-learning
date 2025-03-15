@@ -200,6 +200,17 @@ Another option is to use a one line comment, this line must start with `//` and 
 
 # Basic data types, operations and flow control (decision statements)
 
+## Floating-point number
+
+> Kind of funny that a couple of days ago I watched a video about [IEEE 754](https://en.wikipedia.org/wiki/IEEE_754) and why floating-point arithmetic is strange xd 
+
+We briefly talked about floats before, they are a type designed to represent and store numbers that have a **non-empty decimal fraction**. 
+
+They are number that have or may have a fractional part after the decimal point (the definition is very poor xd). But examples are "two and a half" or "zero point four".
+
+
+
+
 # Flow control (loops), typecasting
 
 # Switch, arrays, pointers and basics of strings
