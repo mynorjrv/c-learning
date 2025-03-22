@@ -206,7 +206,24 @@ Another option is to use a one line comment, this line must start with `//` and 
 
 We briefly talked about floats before, they are a type designed to represent and store numbers that have a **non-empty decimal fraction**. 
 
-They are number that have or may have a fractional part after the decimal point (the definition is very poor xd). But examples are "two and a half" or "zero point four".
+They are numbers that have or may have a fractional part after the decimal point (the definition is very poor xd). But examples are "two and a half" or "zero point four".
+
+About commas: C accept only point as a decimal separator, some languages use comma but the C compiler may misunderstand the program intentions. Also, commas are not accepted as thousands separator.
+
+The examples would be then `2.5` and `0.4`.
+
+Another detail is that zero before or after decimal point may be omitted. `0.4` may be written as `.4` and `4.0` may be written as `4.`. 
+
+The point is essential in recognizing floating-point numbers. A `4` is interpreted as an int, `4.0` is a **double**.
+
+Doubles represent double-precision floating-point numbers, they have fifteen decimal digits of precision and can be assigned to floats. Floats are single-precision floating-point numbers which have six decimal digits of precision. 
+
+I do not understand why they introduce this difference so informal xd but apparently they will explain this later.
+
+Floating-point numbers allows us to use scientific notation to express large or small numbers. For example `6.62607E-34` would be the Planck's constant, or `3E8` would be the speed of light. It is possible to use the lower case letter `e`, and it is important to remember that the exponent must be an integer.
+
+
+
 
 
 
