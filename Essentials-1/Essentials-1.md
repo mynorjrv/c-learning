@@ -222,10 +222,40 @@ I do not understand why they introduce this difference so informal xd but appare
 
 Floating-point numbers allows us to use scientific notation to express large or small numbers. For example `6.62607E-34` would be the Planck's constant, or `3E8` would be the speed of light. It is possible to use the lower case letter `e`, and it is important to remember that the exponent must be an integer.
 
+For declaring these types we use the keywords **float** and **double** respectively, just as we declared ints.
+
+```C
+float PI, Field;
+
+int i;
+float x;
+
+i = 10 / 4;
+x = 10.0 / 4.0;
+```
+
+Declaring a different type of variable is pretty simple, but the difference is significant in terms of semantics. The **/** operator performs mathematical division, but when dividing `10/4` as ints we get 2, while if we use floats the result is 2.5.
+
+### About type conversions
+
+We could transform ints to floats, it is always possible and feasible but in some cases can cause a loos of accuracy(?). For example int(100) is converted to a float(100). The transformation affects the internal (machine) representation of the values, as computers use different methods for storing floats and ints in memory.
+
+Now, lest consider the opposite situation. If we try to convert `100.25` to int, we are just going to get the 100 part of the number. Decimals do not make sense for ints.
+
+Another part of conversion is the size of the data type. Both ints and floats have limited capacity. If a computer use four bytes to store ints, we are only able to stores numbers in the range [-2147483648, 2147483647]. Therefore, if we try to assign `1e10` to an int there is not just a loss of accuracy but the value assigned to the int is not known in advance. Some systems may throw an error, others may assign the maximum permissible int value and others the value may be completely random. This is called an **implementation dependent issue**, and comes with software portability.
 
 
+## Operators
 
+As it was briefly introduce in the previous section, an **opertor** is a symbol in the programming language which is able to operate some values. For example, we have used the assignment operator `=` which is used to assign values to variables.
 
+### Arithmetic operations
+
+- An asterisk `*` is the **multiplication** operator.
+- A slash `/` is a **divisional** operator. The value in front of the slash is a **dividend**, the value behind the slash, a **divisor**. Division by zero is forbidden but you may get a compilation error or the execution may terminate abnormally and produce unreliable results.
+- A plus `+` is the **addition** operator. 
+- A minus `-` is the **subtraction** operator, and can also be used to change the sign of a number. `-` can act as a **unary** operator (it operates over one value) or as a **binary** operator (it operates over two values).
+- A percent `%` is the **remainder** or **modulus** operator. It only receives ints 
 
 
 # Flow control (loops), typecasting
