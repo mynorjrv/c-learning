@@ -301,7 +301,52 @@ The last line is equivalent to `SheepCounter++;`. In a similar manner, you can u
 
 Both examples use these operators as **postfix operators**, they come after the variable name. However, both operators can be placed in front of a variable as well, for example `--SheepCounter;`. In this later case, the operator is used as a **prefix operator**. 
 
-In this examples the effects would be exactly the same, but there is a significant difference between both types.
+In this examples the effects would be exactly the same, but there is a significant difference between both types. Preffix operators have the effect of incrementing/decrementing the variable by one and return its values already modified. Postfix operators returns the original (unchaged) value of the variable an then increment/decrement the variable by one.
+
+Some examples are better suited for explaining the operators behavior.
+
+```C
+int i,j;
+
+i=1;
+j=i++;
+```
+
+In this first case, `j` will take the original value of `i` which is 1, `i` will then be increased by 1 making its value 2.
+
+```C
+int i,j;
+
+i=1;
+j=++i;
+```
+
+In the second example, `i` will be incremented and then its value will be assigned to `j`, both `i` and `j` will have a value of 2 at the end.
+
+Both postfix and prefix operators have the same priority as the unary `+` and `-`, also prefix have right-to-left binding while postfix have a left-to-right binding.
+
+With all this we can see a bit more complex example.
+
+```C
+int i,j;
+
+i = 4;
+j = 2 * i++;
+i = 2 * --j;
+```
+
+Lets trace the excecution of this snippet:
+
+1. The `i` variable gets assigned the value of 4,
+2. the original value of `i` (4) is multiplied by 2, the result (8) is then assigned to `j` and eventually `i` gets postincremente (5),
+3. now `j` is predecremented (7), this new value is taken and multiplied by 2 an the result (14) is finally assigned to `i`. 
+
+I barely remind that in the programming abstractions course, something is mentioned about this operators. I will eventually re read it xd 
+
+
+### Shortcut operators
+
+
 
 
 
