@@ -255,7 +255,54 @@ As it was briefly introduce in the previous section, an **opertor** is a symbol 
 - A slash `/` is a **divisional** operator. The value in front of the slash is a **dividend**, the value behind the slash, a **divisor**. Division by zero is forbidden but you may get a compilation error or the execution may terminate abnormally and produce unreliable results.
 - A plus `+` is the **addition** operator. 
 - A minus `-` is the **subtraction** operator, and can also be used to change the sign of a number. `-` can act as a **unary** operator (it operates over one value) or as a **binary** operator (it operates over two values).
-- A percent `%` is the **remainder** or **modulus** operator. It only receives ints 
+- A percent `%` is the **remainder** or **modulus** operator. It only receives ints and the right argument cannot be zero.
+
+### Operators priorities
+
+Just as in elementary school :) operators have priorities. Multiplication precedes addition and so on. The language defines this hierarchy of priorities.
+
+### Bindings
+
+A binding determines the order of computations performed by operators of equal priority. Most operators in C have a left-sided binding.
+
+Additions performed by computers are not always commutative. Apparently we are going to come to this fact later. 
+
+### Small list of priorities
+
+For now we have this priorities, from higher to lower:
+
+| Priorities         |
+|--------------------|
+| Unary +, unary -   |
+| *, /, %            |
+| Binary +, binary - |
+
+
+For example `2*3%5` is equals to `1`.
+
+### Parentheses
+
+As in simple math :) we can use parentheses.
+
+### Postfix and prefix operators
+
+Finally, something a bit more interesting. This operators are used to increment or decrement a variable by one. For this, we use the **increment operator** `++` and the **decrement operator** `--`. 
+
+To increment a variable by one, we can have something like:
+
+```C
+int SheepCounter;
+
+SheepCounter = 0;
+SheepCounter = SheepCounter + 1;
+```
+
+The last line is equivalent to `SheepCounter++;`. In a similar manner, you can use `SheepCounter--;` to reduce the variable by one. 
+
+Both examples use these operators as **postfix operators**, they come after the variable name. However, both operators can be placed in front of a variable as well, for example `--SheepCounter;`. In this later case, the operator is used as a **prefix operator**. 
+
+In this examples the effects would be exactly the same, but there is a significant difference between both types.
+
 
 
 # Flow control (loops), typecasting
