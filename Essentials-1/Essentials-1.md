@@ -357,6 +357,22 @@ Shorcut operators can achieve a similar effect than postfix ans suffix operators
 
 ## The char type
 
+Ina ddition to working with numbers, compures can be easily used for word processing. For now we will consider single characters. C offers a **char** type (an abbreviation of character) which allow us to store and manipulate single characters.
+
+Words can be seen as **strings of characters**. We briefly work with them when using the `puts` function, but for now we are going to ignore strings. C treats strings as **arrays**, so we are going to deal with them later.
+
+Assigning a char is as simple as `char Character;`.
+
+
+### ASCII code
+
+Computers store charactes as numbers. Each character corrsponds to a unique number. This system of assignments not only includes common charactes, it also includes some invisible to humans charactes.
+
+Some of these characters are called white spaces, while others are named control characters, because their purpose is to control the input/output devices. An example of a white space that is completely invisible to the naked eye is a special code, or a pair of codes (different operating systems may treat this issue differently), which are used to mark the ends of lines inside text files. People don’t see this sign (or these signs), but they can see their effect where the lines are broken.
+
+It would be extreamly inconvenient if each computer used different character encoding. For this, a universal and widely accepted standard was needes. This need was fullfilled by **ASCII** (which is a short for American Standard Code for Information Interchange), it is the most widely used system in the world and its safe to assume that nearly all modern devices use this code.
+
+The code provides space for 256 different characters. A full list is available in wikipedia <https://en.wikipedia.org/wiki/ASCII>.
 
 
 
