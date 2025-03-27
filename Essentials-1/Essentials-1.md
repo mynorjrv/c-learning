@@ -344,7 +344,20 @@ Lets trace the excecution of this snippet:
 I barely remind that in the programming abstractions course, something is mentioned about this operators. I will eventually re read it xd 
 
 
-### Shortcut operators
+### Shortcut assignement operators
+
+Shorcut operators are a combination between an operator and the ssigment operator. They are useful to perform an operarion over a variable an then assigning the result to the same variable. 
+
+For example `i = i * 2;` and `sheeps = sheeps + 10;` can be rewritten as `i *= 2;` and `sheeps += 10`. 
+
+In a general way, if `op` is a binary operator, and the operator is used as `variable = variable op expression;` then the expression can be simplified as `variable op= expression;`.
+
+
+Shorcut operators can achieve a similar effect than postfix ans suffix operators. `i++;` is similar to `i += 1;`.
+
+## The char type
+
+
 
 
 
