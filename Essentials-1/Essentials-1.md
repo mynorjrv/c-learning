@@ -301,7 +301,7 @@ The last line is equivalent to `SheepCounter++;`. In a similar manner, you can u
 
 Both examples use these operators as **postfix operators**, they come after the variable name. However, both operators can be placed in front of a variable as well, for example `--SheepCounter;`. In this later case, the operator is used as a **prefix operator**. 
 
-In this examples the effects would be exactly the same, but there is a significant difference between both types. Preffix operators have the effect of incrementing/decrementing the variable by one and return its values already modified. Postfix operators returns the original (unchaged) value of the variable an then increment/decrement the variable by one.
+In this examples the effects would be exactly the same, but there is a significant difference between both types. Preffix operators have the effect of incrementing/decrementing the variable by one and return its values already modified. Postfix operators returns the original (unchanged) value of the variable an then increment/decrement the variable by one.
 
 Some examples are better suited for explaining the operators behavior.
 
@@ -335,7 +335,7 @@ j = 2 * i++;
 i = 2 * --j;
 ```
 
-Lets trace the excecution of this snippet:
+Lets trace the execution of this snippet:
 
 1. The `i` variable gets assigned the value of 4,
 2. the original value of `i` (4) is multiplied by 2, the result (8) is then assigned to `j` and eventually `i` gets postincremente (5),
@@ -346,18 +346,18 @@ I barely remind that in the programming abstractions course, something is mentio
 
 ### Shortcut assignement operators
 
-Shorcut operators are a combination between an operator and the ssigment operator. They are useful to perform an operarion over a variable an then assigning the result to the same variable. 
+Shorcut operators are a combination between an operator and the ssigment operator. They are useful to perform an operation over a variable an then assigning the result to the same variable. 
 
 For example `i = i * 2;` and `sheeps = sheeps + 10;` can be rewritten as `i *= 2;` and `sheeps += 10`. 
 
 In a general way, if `op` is a binary operator, and the operator is used as `variable = variable op expression;` then the expression can be simplified as `variable op= expression;`.
 
 
-Shorcut operators can achieve a similar effect than postfix ans suffix operators. `i++;` is similar to `i += 1;`.
+Shortcut operators can achieve a similar effect than postfix ans suffix operators. `i++;` is similar to `i += 1;`.
 
 ## The char type
 
-Ina ddition to working with numbers, compures can be easily used for word processing. For now we will consider single characters. C offers a **char** type (an abbreviation of character) which allow us to store and manipulate single characters.
+Ina addition to working with numbers, computers can be easily used for word processing. For now we will consider single characters. C offers a **char** type (an abbreviation of character) which allow us to store and manipulate single characters.
 
 Words can be seen as **strings of characters**. We briefly work with them when using the `puts` function, but for now we are going to ignore strings. C treats strings as **arrays**, so we are going to deal with them later.
 
@@ -366,13 +366,18 @@ Assigning a char is as simple as `char Character;`.
 
 ### ASCII code
 
-Computers store charactes as numbers. Each character corrsponds to a unique number. This system of assignments not only includes common charactes, it also includes some invisible to humans charactes.
+Computers store characters as numbers. Each character corresponds to a unique number. This system of assignments not only includes common characters, it also includes some invisible to humans characters.
 
 Some of these characters are called white spaces, while others are named control characters, because their purpose is to control the input/output devices. An example of a white space that is completely invisible to the naked eye is a special code, or a pair of codes (different operating systems may treat this issue differently), which are used to mark the ends of lines inside text files. People don’t see this sign (or these signs), but they can see their effect where the lines are broken.
 
-It would be extreamly inconvenient if each computer used different character encoding. For this, a universal and widely accepted standard was needes. This need was fullfilled by **ASCII** (which is a short for American Standard Code for Information Interchange), it is the most widely used system in the world and its safe to assume that nearly all modern devices use this code.
+It would be extremely inconvenient if each computer used different character encoding. For this, a universal and widely accepted standard was needed. This need was fulfilled by **ASCII** (which is a short for American Standard Code for Information Interchange), it is the most widely used system in the world and its safe to assume that nearly all modern devices use this code.
 
 The code provides space for 256 different characters. A full list is available in wikipedia <https://en.wikipedia.org/wiki/ASCII>.
+
+There are some interesting facts about ascii. An example is that the code for space is 32, the space for "A" is 65 and the space of "a" is 97. Between the two As there is a difference of 32, the code of a space (for some reason this will be important later). Also, letters are in Latin alphabet order.
+
+### Values of the char type
+
 
 
 
