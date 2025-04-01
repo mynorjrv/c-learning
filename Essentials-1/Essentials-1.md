@@ -378,8 +378,30 @@ There are some interesting facts about ascii. An example is that the code for sp
 
 ### Values of the char type
 
+There are two ways to use char values in C.
+
+The first one is specifying the character itself enclosed in single quotes. For example `char character = 'A';` or `char character = '*';`.
+
+The second method consist of assigning a non-negative integer value that is the code for the desired character. If we want assign an A we can then do `char character = 65;`.
+
+The second method, however, is less recommended. First, it is illegible. Second, the integer is dependent of the codes used in the computer, and some computers use codes other than ASCII. For example, many of IBM mainframes use a code called **EBCDIC** (Extended Binary Coded Decimal Interchange Code).
+
+Using the first method would leave to the compiler the decision of which code is used.
+
+### Literals
+
+A **literal** is a symbol which uniquely identifies its value. In a shorter form, literal means itself. 
+
+This could be better represented using examples:
+
+- `Character` is not a literal, it could be a variable name but you cannot guess just by looking at it what value has assigned.
+- `A` is a literal, we immediately know the value and we even know it is of char type.
+- `100` is a literal
+- `100.0` is a literal
+- `i + 10` is not a literal, again we do not know the value of `i`. This combination of a variable and a literal joined by a operator is called an **expression**.
 
 
+### Character literals
 
 
 
