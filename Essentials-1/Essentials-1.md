@@ -403,6 +403,51 @@ This could be better represented using examples:
 
 ### Character literals
 
+An interesting situation regarding chars is how is an apostrophe itself declared as a char. Chars usually are literals enclosed by apostrophe but they cannot enclose themselves.
+
+To declare an apostrophe we need a **escape character**, its role is to escape the usual role of the apostrophe and allows to use other characters. In C, the escape character is the backslash `\`, so to correctly get the value of an apostrophe the format is `character = '\''`.
+
+The escape character can be used to escape from the escape character. In this case we can assign the backslash to a variable as follows `character = '\\'`.
+
+### More characters that use the escape character
+
+The “C” language allows us to escape in other circumstances too. Let's start with those that denote literals representing white spaces.
+
+`\n` denotes a transition to a **new line**, it is sometimes called a LF (line feed).
+
+`\r` denotes the **return** to the beginning of the line and is sometimes called a CR (carriage return).
+
+`\a` is an **alarm** and is officially called a **BEL**. It is a relic of the past, this signals a teletype to ring.
+
+`\0` is a **nul**. It is a character that does not represent any character.
+
+The escape character can be also be used to escape octal or hexadecimal codes. In both cases the code is treated as an ASCII code. For example:
+
+`'\47'` is an octal 47, which translates to 39 decimal, then it represents the apostrophe in ASCII.
+
+`'\x27'` is an hexadecimal 27, which translates again to 39 decimal.
+
+### More on char as ints
+
+In C, chars are treated as an special kind of ints.
+
+This means:
+
+- You can assign a char value to an int variable.
+- You can assign an int values to a char variable, but if the value is larger than 255 you must expect a loss of value.
+- Chars can be operated as ints.
+
+A funny example of the last observation is the following:
+
+```C
+char Char;
+Char = 'A';
+Char += 32;
+Char -= ' ';
+``` 
+
+This sequence will transform A into a lowercase a and then covert it back to uppercase A.
+
 
 
 
