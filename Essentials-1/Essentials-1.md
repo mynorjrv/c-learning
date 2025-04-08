@@ -448,10 +448,14 @@ Char -= ' ';
 
 This sequence will transform A into a lowercase a and then covert it back to uppercase A.
 
-
-
-
 # Flow control (loops), typecasting
+
+## The absolute basics of control flow
+
+From the very basics, computers work just with yes or no. This can be used to check if two values are equal. For this we used the `==` operator.
+
+``==` is a left-side binding operator that checks if the arguments are equal. For example `2==2` returns a `true` value, while `1==2` returns a `false` value.
+
 
 # Switch, arrays, pointers and basics of strings
 
