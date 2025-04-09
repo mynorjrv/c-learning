@@ -454,7 +454,18 @@ This sequence will transform A into a lowercase a and then covert it back to upp
 
 From the very basics, computers work just with yes or no. This can be used to check if two values are equal. For this we used the `==` operator.
 
-``==` is a left-side binding operator that checks if the arguments are equal. For example `2==2` returns a `true` value, while `1==2` returns a `false` value.
+`==` is a left-side binding operator that checks if the arguments are equal. For example `2==2` returns a `true` value, while `1==2` returns a `false` value. (It has a really low priority.)
+
+There are another operators that allows you to compare values other than equality. We can use `!=` for inequality, `<` and `>` for lesser and greater than, `<=` and `>=` for lesser or equal than and greater or equal than.
+
+This `false` and `true` values can be stored in a variable of type `int`, like:
+
+```C
+int Answer, Value1, Value2;
+Answer = Value1 >= Value2;
+``` 
+
+The variable will get a `0` if the answer is `false` and a `1` if the answer is true.
 
 
 # Switch, arrays, pointers and basics of strings
