@@ -467,6 +467,113 @@ Answer = Value1 >= Value2;
 
 The variable will get a `0` if the answer is `false` and a `1` if the answer is true.
 
+Surprisingly, bool type is introduced with a preprocessor directive xd it uses `stdbool.h`.
+
+## Conditions and conditional executions
+
+C has some variants of **conditional statements**, these are instructions that allows the program to do something if a condition is met.
+
+The simplest one is a **if statement**.
+
+An if statement could be a one liner like `if(condition) do_this_if_true;` or could enclose more statements with curly brackets:
+
+```C
+if(condition) {
+	do_this;
+	and_this_if_true;
+}
+``` 
+
+Technically, you can make a long one liner, but we are old enough for not considering it.
+
+A more realistic example looks something like:
+
+```C
+if(SheepCounter >= 120){
+    MakeABed();
+    TakeAShower();
+    SleepAndDream();
+}
+
+FeedTheSheepdogs();
+``` 
+
+
+## IO and typecasting
+
+### Output
+
+Foooor some reason, this course introduce Input and Output before other types of conditional statements. I guess is difficult to teach some things to absolute beginners.
+
+We got a brief intro to output when using the `puts()` function. This allowed us to print a string to the terminal string. This function only accepts data of type `char *` (which we have not really seen but are strings), so what can be done if we want to print ints or floats or chars?
+
+Well, we use the powerful `printf()` (print formatted). This function allows mixing types with an appropriate format. This function needs at least one argument and accept as many more as we like, the first one must be a string and the others could be of any type.
+
+The first argument is called the **format**. It is an specification of how to print the subsequent arguments.
+
+The simplest example looks like `printf("This is just a text.");`.
+
+Then, if we want to print an int, we need to do something like
+
+```C
+printf("Sheep counted so far: %d", SheepCounter);
+```
+
+The `%` joined with a character is sometimes called an **specifier**. The `d` indicates that the corresponding argument should be treated as an int.
+
+Other identifiers are:
+
+- `%d` or `%i` (we already saw this one) specifies arguments of type int
+- `%x` specifies arguments of type int presented as fixed point hexadecimal number
+- `%c` specifies arguments of type char
+- `%o` specifies arguments of type int presented as fixed point octal number
+- `%f` specifies arguments of type float
+- `%lf` specifies arguments of type double
+
+An extra sign to consider is `%%` which specifies the percent sign by itself.
+
+Now lets see a more interesting example:
+
+```C
+#include <stdio.h>
+
+int main(void) {
+    int VarInt;
+    char VarChar;
+    float VarFloat;
+	
+    VarInt = 2012;
+    VarChar = 'r';
+    VarFloat = 3.1415;
+	 
+    printf("The year is %d. The radius is denoted as %c while PI is equal to %f", 
+	        VarInt, VarChar, VarFloat);
+    return 0;
+}
+```
+
+In this example, we are formatting three different types in a string. Note that the format must contain a corresponding number of identifiers as extra arguments are passed to the function. 
+
+A common mistake is passing an argument that does not correspond in type to the identifier, some of them are interpreted (the identifier expects an int but a char is passed) and others may print strange results (the identifier expects a float but an int was given).
+
+A last issue to address. The string sent to screen using `printf()` will appear character by character, and if not requested explicitly it will fill the entire line. For example 
+
+```C
+printf("This is phrase #1. This is phrase #2. ");
+printf("This is phrase #3.");
+```
+
+will print a single line. To print different things in different lines we need to use a new line character `\n`, like this:
+
+```C
+printf("This is phrase #1.\nThis is phrase #2.\n");
+printf("This is phrase #3.\n");
+```
+
+### Input
+
+
+
 
 # Switch, arrays, pointers and basics of strings
 
