@@ -570,6 +570,9 @@ printf("This is phrase #1.\nThis is phrase #2.\n");
 printf("This is phrase #3.\n");
 ```
 
+Something mentioned in the labs which I believe was not previously said it that format specifiers for floats can have a maximum length for the printed number and a specific number of decimals. For example `%9.2f` specifies two decimal digits and 9 characters as the length of the number and spaces.
+
+
 ### Input
 
 It is difficult to imagine a program which does not require any data input, but one can always manage to do it in a carefree way:
