@@ -572,6 +572,42 @@ printf("This is phrase #3.\n");
 
 ### Input
 
+It is difficult to imagine a program which does not require any data input, but one can always manage to do it in a carefree way:
+
+- Encode all the needed data inside the source code ("Hard coding")
+- When you need to change something and repeat the excecution of the program, you modify the source and recompile it :)
+
+Of course is not convenient. It is far better to get info from the user, transfer it to the program, and then use it for calculations. Now there comes a pro tip:
+
+> If you need to perform some complex operations, you should beging with searching for a standard function that performs this task, and **only** if such function does not exist should you write it on your own.
+
+In C, the function to get user data exists. It is called `scanf` (scan fromatted), and is a close relative of `printf`. 
+
+For example, if we want to introduce a number of sheeps we can do something like:
+
+```C
+scanf("%d", &MaxSheep);
+```
+
+(Are we using a variable as reference? We havent been introduced to it I guess xd)
+
+Just like printing, the first parameter is a **format** that tells the function which data will be given to the program, and in which form. As before, we give arguments for the format in the amount equal to the number of the specifiers. 
+
+Now lets see some differences. When printing, the argument may not be a variable. For example, we could write
+
+```C
+printf("%d", 2*i);
+```
+
+this takes the value of the expression `2*x` when printing.
+
+Instead, when using a scan, we must explicitly specify the variable that is able to store the data.
+
+Andddd... Ajaaaaaaa... The variable has a `&` before it. JAJAJAJA it will be dicussed later but for now we will make this difference: when using the name of a variable (`MaxSheep`) we mean the **value** stored in the variable.
+
+`scanf` is actually not interested in the value stored, the function actually wants to override this value. What the scan needs is the location in memory where the variable is stored. `&` is a unary operator which gives the information about the arguments location. Missing the `&` does not cause any problem while compiling, so it is important to remember it is essential for a scan to work properly.
+
+Furthermore, scan uses the same specifiers as printing.
 
 
 
