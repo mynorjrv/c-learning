@@ -613,6 +613,64 @@ Andddd... Ajaaaaaaa... The variable has a `&` before it. JAJAJAJA it will be dic
 Furthermore, scan uses the same specifiers as printing.
 
 
+# More on loops, conversions, logical and bitwise operations
+
+Some exaple of conditional statements in plain English:
+
+"If the weather is good we will go for a walk, otherwise we will go to a theater."
+
+The sentence makes the plans more resistant to "the whims of fate". We have a plan B.
+
+In C we use an if-else statement like this:
+
+```C
+if (condition)
+    some code;
+else
+    some other code;
+``` 
+
+For longer blocks we use curly brackets:
+
+```C
+if (condition) {
+    some_code;
+    some_other_code;
+}
+else {
+    some_code;
+    some_other_code;
+}
+```
+
+if-else statements can be nested or cascated. For readability it is better to cascade them:
+
+```C
+if(TheWeatherIsGood)
+    GoForAWalk();
+else if(TicketsAvailable)
+    GoToATheatre();
+else if(TableAvailable)
+    GoForALunch();
+else
+    PlayChessAtHome();
+```
+
+But is possible:
+
+```C
+if(TheWeatherIsGood)
+    if(NiceRestaurantFound)
+        HaveLunch();
+    else
+        EatASandwich();
+else 
+    if(TicketsAvailable)
+        GoToATheatre();
+    else
+        GoShopping();
+```
+
 
 # Switch, arrays, pointers and basics of strings
 
