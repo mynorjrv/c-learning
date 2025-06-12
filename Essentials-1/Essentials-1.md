@@ -693,7 +693,9 @@ Unsigned chars aparently are useful because most compilers assume that chars are
 
 Another funny stuff. Numbers (integer literals) are of type `int`. But in some cases, the compiler can interpret an integer literal as a `long`. This will happen if a literal goes beyond the acceptable range of int or if an L or l is appended to the literal (like `0L` or `198l`).
 
+Now on floats. The `short` modifier cannot be used with floats, but `long` can be used. A `long float` is actually a synonym for `double`. Floats use 32-bit accuracy, this means theycan save 8 precise digits. A float uses 64-bit accuracy, and it guarantees that the variable can save about 15 to 17 digits (that is the reason is called a double). 
  
+Because precission, adding two floats or two doubles is not always commutative. When adding a very large number with another very small, because of the limit in the precission storage, the small value vanishes from the operation. This phenomenon is called a numerical anomaly.
 
 
 # Switch, arrays, pointers and basics of strings
