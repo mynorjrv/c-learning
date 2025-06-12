@@ -671,6 +671,30 @@ else
         GoShopping();
 ```
 
+## More than just ints
+
+Here is where C gets dumb xd 
+
+For some applications, the `int` storage of 32 bits (4 bytes) insufficient or too large, or the range between [-2147483648, 2147483647] may be inadequate.
+
+To specify memory requirements, C uses modifiers:
+
+- `long` is used for a wider range than a `int`
+- `short` is a narrower range
+- `unsigned` is to specify non-negative values
+
+The problem? The actual size depends on the compiler (you can actually use a `long long` type). This makes C a strange standard.
+
+An important observation, when using modifiers the word `int` may be ommited: `short int my_counter;` is equivalent to `short my_counter;`.
+
+And there are some more funny stuff. Long and short should not be used simultaneously in a declaration, and long and short must not be used with `char`. But for some reason, an `unsigned char` is possible xd
+
+Unsigned chars aparently are useful because most compilers assume that chars are stored using 8 bits. That is enough for small values as the number of months or day in a month. An unsigned char allows you to use the range [0, 255] which is sufficient for some applications and result in significant savings in memory usage.
+
+Another funny stuff. Numbers (integer literals) are of type `int`. But in some cases, the compiler can interpret an integer literal as a `long`. This will happen if a literal goes beyond the acceptable range of int or if an L or l is appended to the literal (like `0L` or `198l`).
+
+ 
+
 
 # Switch, arrays, pointers and basics of strings
 
